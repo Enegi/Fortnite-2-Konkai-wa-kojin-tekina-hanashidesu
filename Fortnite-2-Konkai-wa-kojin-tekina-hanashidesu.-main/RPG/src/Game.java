@@ -69,10 +69,10 @@ public class Game implements Serializable {
         equips[3].assign("Collar Antiguo", "Un collar barato que irradia mana", 2, 3, 5, 5, 0, 0, 0);
         equips[4].assign("Grimorio", "Un libro de hechizos para principiantes", 3, 3, 0, 0, 1, 0, 1);
 
-        equips[5].assign("Boina militar", "Boina del ejercito de pisos picados", 0, 4, 10, 0, 0, 1, 0);
+        equips[5].assign("Boina militar", "Boina del ejercito de pisos picados", 0, 4, 5, 0, 0, 1, 0);
         equips[6].assign("Atuendo militar", "Atuendo militar del ejercito de pisos picados", 1, 4, 10, 0, 1, 0, 0);
         equips[7].assign("Brazal", "Brazal militar del ejercito de pisos picados", 2, 4, 0, 0, 1, 1, 0);
-        equips[8].assign("Latigo de paja", "Latigo", 3, 4, 0, 0, 1, 0, 0);
+        equips[8].assign("Latigo de paja", "Latigo viejo hecho con paja", 3, 4, 0, 0, 1, 0, 0);
 
         equips[9].assign("Craneo robusto", "Jorgelon cuenta con un tamaño de craneo mayor al promedio", 0, 5, 10, 0, 0, 2, -1);
         equips[10].assign("Grasa extra", "Grasa corporal extra que cubre su piel", 1, 5, 5, 0, 0, 2, -1);
@@ -81,13 +81,38 @@ public class Game implements Serializable {
 
         equips[13].assign("Cubrebocas oscuro", "Cubrebocas que brinda sigilo", 0, 6, 5, 0, 0, 0, 1);
         equips[14].assign("Armadura basica", "Armadura que cubre solo lo escencial", 1, 6, 10, 0, 0, 2, 0);
-        equips[15].assign("Bufanda negra", "Bufanda larga y ligera que cubre a su usuario", 2, 6, 5, 0, 0, 0, 1);
+        equips[15].assign("Bufanda negra", "Bufanda larga y ligera que cubre a su usuario", 2, 6, 5, 0, 0, 0, 2);
         equips[16].assign("Tanto", "Katana corta de filo pobre", 3, 6, 0, 0, 2, 0, 0);
 
         equips[17].assign("Estola", "Estola basica para sacerdotes", 0, 7, 5, 5, 0, 0, 0);
         equips[18].assign("Tunica de sacerdote", "Tunica basica para sacerdotes", 1, 7, 5, 5, 0, 0, 0);
         equips[19].assign("Agua Bendita con glitter", "Agua bendecida por un sacerdote de 2da", 2, 7, 0, 10, 0, 1, 0);
         equips[20].assign("Báculo mágico", "Baculo de sacerdotes aprendices", 3, 7, 0, 10, 1, 0, 0);
+
+        equips[21].assign("Diadema de oro", "Una diadema de oro con un rubi", 0, 3, 5, 15, 0, 1, 0);
+        equips[22].assign("Tunica de hechicero", "Tunica para magos experimentados", 1, 3, 10, 25, 0, 2, 0);
+        equips[23].assign("Anillo de oro", "Anillo comun entre los magos", 2, 3, 0, 10, 0, 0, 0);
+        equips[24].assign("Grimorio avanzado", "", 3, 3, 0, 0, 0, 0, 0);
+
+        equips[25].assign("", "", 0, 4, 0, 0, 0, 0, 0);
+        equips[26].assign("", "", 1, 4, 0, 0, 0, 0, 0);
+        equips[27].assign("", "", 2, 4, 0, 0, 0, 0, 0);
+        equips[28].assign("", "", 3, 4, 0, 0, 0, 0, 0);
+
+        equips[29].assign("", "", 0, 5, 0, 0, 0, 0, 0);
+        equips[30].assign("", "", 1, 5, 0, 0, 0, 0, 0);
+        equips[31].assign("", "", 2, 5, 0, 0, 0, 0, 0);
+        equips[32].assign("", "", 3, 5, 0, 0, 0, 0, 0);
+
+        equips[33].assign("Kabuto", "Casco tradicional japones", 0, 6, 5, 0, 1, 2, 0);
+        equips[34].assign("Armadura de samurai", "Armadura tradicional japonesa", 1, 6, 10, 0, 0, 3, -1);
+        equips[35].assign("Mascara de oni", "Mascara hecha con piel de un oni rojo", 2, 6, 5, 5, 0, 0, 1);
+        equips[36].assign("Katana", "Katana comun de filo superior", 3, 6, 0, 0, 5, 0, -1);
+
+        equips[37].assign("", "", 0, 7, 0, 0, 0, 0, 0);
+        equips[38].assign("", "", 1, 7, 0, 0, 0, 0, 0);
+        equips[39].assign("", "", 2, 7, 0, 0, 0, 0, 0);
+        equips[40].assign("", "", 3, 7, 0, 0, 0, 0, 0);
 
         Battle.LEVEL_MAX = 30;
         protag[3].assign("Andrea", "Una hechicera", 70, 150, 5, 0, 5, new int[]{1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0});
