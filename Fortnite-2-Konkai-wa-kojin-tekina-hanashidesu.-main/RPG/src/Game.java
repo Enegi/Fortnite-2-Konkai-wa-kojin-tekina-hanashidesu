@@ -55,11 +55,17 @@ public class Game implements Serializable {
         party[0] = 1;
 
         statusEffects[0].assign(1, true, "K.O.", "", "ya no puede pelear.", "puede pelear otra vez.");
-        statusEffects[1].assign(8, false, "Quemadura", "recibe daño de quemadura.", "se prende en llamas.", "ha apagado el fuego.");
-        statusEffects[2].assign(2, false, "Parálisis", "no pudo moverse a causa de la parálisis.", "recibe una descarga eléctrica.", "ha perdido la parálisis.");
-        statusEffects[3].assign(1, false, "Congelamiento", "esta congelado.", "fue congelado.", "se ha descongelado.");
-        statusEffects[4].assign(8, false, "Quemadura", "recibe daño de quemadura.", "se prende en llamas.", "ha apagado el fuego.");
-
+        statusEffects[1].assign(8, false, "Quemadura", "recibe daño de quemadura...", "se prende en llamas.", "ha apagado el fuego.");
+        statusEffects[2].assign(2, false, "Parálisis", "no pudo moverse a causa de la parálisis...", "recibe una descarga eléctrica.", "ha perdido la parálisis.");
+        statusEffects[3].assign(1, false, "Congelamiento", "esta congelado...", "fue congelado.", "se ha descongelado.");
+        statusEffects[4].assign(1, false, "Restringido", "esta detenido por el general...", "es atrapado por el latigo.", "se ha liberado.");
+        statusEffects[5].assign(7, false, "Enloquecido", "esta confundido...", "ha perdido la razon!", "ha recuperado la cordura.");
+        statusEffects[6].assign(9, false, "Ensanguijelado", "las sanguijuelas succionan el mana del enemigo...", "se lleno de sanguijuelas!", "se desprende de las sanguijuelas.");
+        statusEffects[7].assign(6, true, "Maldecido", "esta maldito...", "ha sido maldecido!", "ha sido purificado.");
+        statusEffects[8].assign(8, false, "Drenadoras", "es drenado de su energía vital...", "crecen raices en el enemigo!", "se ha desprendido de las raices marchitas.");
+        statusEffects[9].assign(6, true, "Vinculo simbiotico", "contiene el poder del general...", "forma un vinculo con el general.", "rompe su vinculo con el general.");
+        statusEffects[10].assign(1, false, "Siesta", "duerme como una roca...", "cae al suelo.", "desperto de su sueño.");
+        statusEffects[11].assign(2, false, "Niebla", "fallo su ataque...", "es envuelto en la neblina.", "se ha librado de la neblina.");
 
         moves[0].assign(0, 0, "Ataque", "", "ataca!", 1, 0, 1, -1, 0, 0, 0, -1, false, 1); //no borren este, es el ataque principal
         items[0].assign("", "", "", 0, 0, -1, 0, 0, -1, 0); //de 0 a 99 son movimientos, de 100 a 199 son objetos
@@ -116,24 +122,52 @@ public class Game implements Serializable {
 
         Battle.LEVEL_MAX = 30;
         protag[3].assign("Andrea", "Una hechicera", 70, 150, 5, 0, 5, new int[]{1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0});
-        moves[1].assign(20, 0, "Bola de fuego", "Ataca a un enemigo y le inflige quemaduras", "conjura una bola de fuego hacia el enemigo!", 1, 15, 2, 1, 3, 0, 0, -1, false, 1);
-        moves[2].assign(15, 0, "Paralisis", "Paraliza a un solo enemigo e inflige daño", "paraliza al enemigo!", 1, 10, 1, 2, 4, 0, 0, -1, false, 1);
-        moves[3].assign(30, 0, "Congelar", "Congela a un enemigo", "congela al enemigo!", 1, 5, 0, 3, 2, 0, 0, -1, false, 1);
-        moves[4].assign(40, 0, "Gran bola de fuego", "Ataca a un enemigo y le inflige quemaduras graves", "conjura una enorme bola de fuego hacia el enemigo!", 1, 35, 2, 1, 5, 0, 0, -1, false, 1);
-        moves[5].assign(120, 0, "Trueno", "Ataca a un enemigo y le inflige paralisis", "conjura un trueno desde el cielo hacia el enemigo!", 1, 80, 0, 2, 4, 0, 0, -1, true, 1);
-        moves[6].assign(200, 20, "Tumba de nieve", "Ataca a todos los enemigos y los congela", "usa un hechizo que no conoce.", 3, 100, 1, 3, 5, 0, 0, -1, false, 1);
+        moves[1].assign(20, 0, "Bola de fuego", "Ataca a un enemigo y le inflige quemaduras.", "conjura una bola de fuego hacia el enemigo!", 1, 15, 2, 1, 3, 0, 0, -1, false, 1);
+        moves[2].assign(15, 0, "Paralisis", "Paraliza a un solo enemigo e inflige daño.", "paraliza al enemigo!", 1, 10, 1, 2, 4, 0, 0, -1, false, 1);
+        moves[3].assign(30, 0, "Congelar", "Congela a un enemigo.", "congela al enemigo!", 1, 5, 0, 3, 3, 0, 0, -1, false, 1);
+        moves[4].assign(40, 0, "Gran bola de fuego", "Ataca a un enemigo y le inflige quemaduras graves.", "conjura una enorme bola de fuego hacia el enemigo!", 1, 35, 2, 1, 5, 0, 0, -1, false, 1);
+        moves[5].assign(120, 0, "Trueno", "Ataca a un enemigo y le inflige paralisis.", "conjura un trueno desde el cielo hacia el enemigo!", 1, 80, 0, 2, 4, 0, 0, -1, true, 1);
+        moves[6].assign(200, 20, "Tumba de nieve", "Ataca a todos los enemigos y los congela.", "usa un hechizo que no conoce.", 3, 100, 1, 3, 5, 0, 0, -1, false, 1);
 
-        protag[4].assign("El General", "Un mago oscuro", 80, 88, 12, 0, 6, new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0});
-        moves[7].assign(0, 0, "Ataque", "", "ataca!", 1, 0, 1, -1, 0, 0, 0, -1, false, 1);
-        moves[8].assign(0, 0, "Ataque", "", "ataca!", 1, 0, 1, -1, 0, 0, 0, -1, false, 1);
-        moves[9].assign(0, 0, "Ataque", "", "ataca!", 1, 0, 1, -1, 0, 0, 0, -1, false, 1);
-        moves[10].assign(0, 0, "Ataque", "", "ataca!", 1, 0, 1, -1, 0, 0, 0, -1, false, 1);
-        moves[11].assign(0, 0, "Ataque", "", "ataca!", 1, 0, 1, -1, 0, 0, 0, -1, false, 1);
-        moves[12].assign(0, 0, "Ataque", "", "ataca!", 1, 0, 1, -1, 0, 0, 0, -1, false, 1);
+        protag[4].assign("El General", "Un mago oscuro", 80, 88, 12, 0, 6, new int[]{7, 8, 9, 10, 11, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0});
+        moves[7].assign(0, 0, "Agarre de latigo", "Retiene al enemigo por 1 turno.", "atrapa al oponente con su latigo!", 1, 0, 0, 4, 1, 0, 0, -1, false, 1);
+        moves[8].assign(30, 0, "Inducción a la locura", "Enloquece a un enemigo provocando que ataque de forma aleatoria.", "susurra algo al enemigo...", 1, 0, 0, 5, 5, 0, 0, -1, false, 1);
+        moves[9].assign(15, 1, "Sanguijuelas", "Invoca sanguijuelas para que consuman el mana del oponente.", "invoca sanguijuelas sobre el enemigo!", 1, 1, 0, 6, 6, 0, 0, -1, false, 7);
+        moves[10].assign(40, 1, "Maldición", "Coloca un sello de maldición sobre el oponente, impidiendo su curación.", "coloca un sello maldito sobre el enemigo!", 1, 0, 0, 7, 1, 0, 0, -1, false, 1);
+        moves[11].assign(15, 1, "Drenadoras", "Lanza semillas a los oponentes que consumiran su energía vital.", "lanza un par de semillas a el enemigo!", 1, 0, 0, 8, 0, 6, 0, -1, false, 1);
+        moves[12].assign(40, 40, "Vinculo simbiotico", "Establece un vinculo con un aliado, restaurando gran parte de su fuerza, pero impidiendo que se curen.", "pone su mano sobre su aliado...", 2, 0, 0, 9, 1, 300, 300, 2, false, 1);
 
-        protag[5].assign("Jorgelon", "El más comelon", 225, 20, 25, 10, 1, new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{5, 0, 0, 0});
-        protag[6].assign("Jorge", "シグマエッジロード", 120, 66, 20, 3, 16, new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0});
-        protag[7].assign("Félix", "Una sacerdotisa", 80, 100, 3, 5, 8, new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0});
+        protag[5].assign("Jorgelon", "El más comelon", 225, 20, 25, 10, 1, new int[]{13, 14, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{5, 0, 0, 0});
+        moves[13].assign(0, 0, "Siesta", "Recupera tu salud y mana tomando una siesta.", "bosteza...", 0, 0, 0, 10, 5, 150, 50, -1, false, 1);
+        moves[14].assign(20, 10, "Bala de cañon", "Salta en el aire y cae sobre los enemigos.", "da un gran salto... y cae sobre los enemigos!", 3, 65, 1, -1, 0, 0, 0, -1, false, 1);
+        moves[15].assign(5, -5, "Mordisco", "Dale un mordisco al rival y recupera salud.", "se abalanza contra el enemigo y lo muerde!", 1, 0, 2, -1, 0, 0, 0, -1, true, 1);
+
+        protag[6].assign("Jorge", "シグマエッジロード", 120, 66, 20, 3, 16, new int[]{16, 17, 18, 19, 20, 21, 22, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0});
+        moves[16].assign(15, 0, "Apuñalada", "Aparece detras del enemigo y atacalo por sorpresa.", "crea una distracción y ataca al enemigo por la espalda!", 1, 0, 2, -1, 0, 0, 0, -1, true, 1);
+        moves[17].assign(15, 0, "Cortina de niebla", "Crea una niebla espesa para entorpecer los ataques enemigos.", "hace sellos con las manos e invoca una niebla espesa...", 3, 0, 0, 11, 2, 0, 0, -1, false, 1);
+        moves[18].assign(10, 0, "Asalto de shurikens", "Lanza una rafaga de shurikens hacia todos los oponentes.", "ataca!", 3, 3, 0, -1, 0, 0, 0, -1, false, 10);
+        moves[19].assign(25, 0, "Cortes consecutivos", "Ataca con un combo de 3 cortes.", "realiza 3 cortes consecutivos!", 1, 0, 1, -1, 0, 0, 0, -1, false, 3);
+        moves[20].assign(40, 30, "Juicio", "Concentra toda tu fuerza en un solo corte, el corte es tan potente que daña al usuario.", "tensa todos sus musculos y desenvaina en un parpadeo!", 1, 0, 6, -1, 0, 0, 0, -1, true, 1);
+        moves[21].assign(96, 66, "Muerte por 1000 cortes", "Desata tu furia sobre el enemigo con incontables cortes.", "comienza la carniceria!", 1, 10, 0, -1, 0, 0, 0, -1, false, 50);
+        moves[22].assign(0, 0, "Seppuku", "Atraviesa tus intestinos con tu hoja para morir con honor.", "toma su arma y la posiciona frente a el con la punta en su dirección y... se empala a si mismo!", 0, 666, 0, -1, 0, 0, 0, -1, true, 1);
+        moves[23].assign(0, 0, "Meditación", "Toma un descanso para meditar y restaurar tus energías.", "pone su arma frente a el y empieza a meditar.", 0, 0, 0, -1, 0, 10, 20, 9, false, 1);
+
+
+        protag[7].assign("Félix", "Una sacerdotisa", 80, 100, 3, 5, 8, new int[]{24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0});
+        moves[24].assign(10, 0, "Sanación pequeña", "Sana un poco las heridas de un aliado.", "sana a su aliado.", 2, 0, 0, -1, 0, 15, 0, -1, false, 1);
+        moves[25].assign(10, 0, "Restauración pequeña", "Restaura un poco la energía de un aliado.", "restaura a su aliado.", 2, 0, 0, -1, 0, 0, 15, -1, false, 1);
+        moves[26].assign(30, 0, "Sanación grande", "Sana bastante las heridas de un aliado.", "sana bastante a su aliado!", 2, 0, 0, -1, 0, 40, 0, -1, false, 1);
+        moves[27].assign(30, 0, "Restauración grande", "Restaura bastante la energía de un aliado.", "restaura bastante a su aliado!", 2, 0, 0, -1, 0, 0, 40, -1, false, 1);
+        moves[28].assign(40, 0, "Sanación grupal", "Sana a todos tus aliados.", "sana a todo el equipo!", 4, 0, 0, -1, 0, 20, 0, -1, false, 1);
+        moves[29].assign(40, 0, "Restauración grupal", "Restaura la energía de todos tus aliados.", "restaura a todo el equipo!", 4, 0, 0, -1, 0, 0, 20, -1, false, 1);
+        moves[30].assign(120, 0, "Plegaria", "Reza para recibir la bendición de los dioses.", "rezo a los dioses... y los dioses respondieron!", 4, 0, 0, -1, 0, 100, 20, 0, false, 1);
+        moves[31].assign(120, 0, "Castigo divino", "Reza para que los dioses impartan justicia.", "rezo a los dioses... y los dioses respondieron!", 3, 100, 0, -1, 0, 0, 0, -1, true, 1);
+        moves[32].assign(60, 0, "Resurrección", "Concentra tu energía para devolverle a alguien la consciencia.", "concentra mana en su baculo y... revive a su aliado!", 2, 0, 0, -1, 0, 40, 0, 0, false, 1);
+        moves[33].assign(10, 0, "Curación: Quemadura", "Cura el efecto de estado.", "cura a su aliado.", 2, 0, 0, -1, 0, 0, 0, 1, false, 1);
+        moves[34].assign(10, 0, "Curación: Parálisis", "Cura el efecto de estado.", "cura a su aliado.", 2, 0, 0, -1, 0, 0, 0, 2, false, 1);
+        moves[35].assign(10, 0, "Curación: Congelamiento", "Cura el efecto de estado.", "cura a su aliado.", 2, 0, 0, -1, 0, 0, 0, 3, false, 1);
+        moves[36].assign(10, 0, "Curación: Vinculo", "Cura el efecto de estado.", "cura a su aliado.", 2, 0, 0, -1, 0, 0, 0, 9, false, 1);
+        moves[37].assign(10, 0, "Curación: Siesta", "Cura el efecto de estado.", "cura a su aliado.", 2, 0, 0, -1, 0, 0, 0, 10, false, 1);
 
         rooms[99].assignBasic(7, "Cuarto De Prueba", "Estas en el cuarto de prueba");
         rooms[99].assignOption(0, "Conseguir dinero del banco.", new int[]{11, 7, 0, 0, 0}, new String[]{"Contraseña", "conseguiste 200 dinero!", "", "", ""}, new int[]{19, 200, 0, 0, 0});
@@ -166,8 +200,14 @@ public class Game implements Serializable {
         rooms[2].assignOption(0, "Nuez", new int[]{0, 0, 0, 0, 0}, new String[]{"", "", "", "", ""}, new int[]{0, 0, 0, 0, 0});
 
         equips[99].assign("Fedora", "El favorito de los reditores", 0, 5, 0, 0, 0, 0, -1);
+      
+        rooms[3].assignBasic(6, "Jaula", "Una celda fria y oscura...");
+        rooms[3].assignOption(0, "Descansar en la cama", new int[]{10, 0, 0, 0, 0}, new String[]{"Duermes en la cama unas horas...", "Despiertas lleno de energía!", "", "", ""}, new int[]{0, 0, 0, 0, 0});
+        rooms[3].assignOption(1, "Revisar debajo de la cama", new int[]{0, 2, 7, 9, 0}, new String[]{"Encuentras un par de monedas!", "Pero una rata salta hacia ti!", "Encontraste 10 monedas.", "", ""}, new int[]{0, 69, 10, 1, 0});
+        rooms[3].assignOption(2, "Tomar el latigo a traves de los barrotes", new int[]{0, 0, 5, 9, 0}, new String[]{"Ves el latigo con el que te torturan a traves de los barrotes al lado de la silla en la que esta sentado el guardia", "Intentas alcanzarlo a traves de los barrotes...", "Conseguiste el latigo de paja!", "", ""}, new int[]{0, 0, 8, 1, 0});
+        rooms[3].assignOption(3, "Abrir la celda", new int[]{6, 1, 0, 0, 0}, new String[]{"Intentas abrir la celda...", "Abres la puerta sin problemas.", "", "", ""}, new int[]{0, 4, 0, 0, 0});
+        rooms[3].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "", ""}, new int[]{0, 2, 40, 2, 1});
     }
-
     public void play() {
         started = true;
         while (continyu == 0) {
