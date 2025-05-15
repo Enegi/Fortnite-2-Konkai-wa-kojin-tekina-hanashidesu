@@ -79,9 +79,9 @@ public class Game implements Serializable {
         equips[11].assign("Pañuelo arrugado", "Pañuelo que limpia los restos despues de comer", 2, 5, 0, 0, 1, 0, 2);
         equips[12].assign("Vacio", "No necesita arma, usa su boca para atacar", 3, 5, 0, 0, 0, 0, 0);
 
-        equips[13].assign("Lentes oscuros", "Lentes oscuros que brindan sigilo", 0, 6, 5, 0, 0, 0, 1);
+        equips[13].assign("Cubrebocas oscuro", "Cubrebocas que brinda sigilo", 0, 6, 5, 0, 0, 0, 1);
         equips[14].assign("Armadura basica", "Armadura que cubre solo lo escencial", 1, 6, 10, 0, 0, 2, 0);
-        equips[15].assign("Capucha negra", "Capucha larga y ligera que cubre a su usuario", 2, 6, 5, 0, 0, 0, 1);
+        equips[15].assign("Bufanda negra", "Bufanda larga y ligera que cubre a su usuario", 2, 6, 5, 0, 0, 0, 1);
         equips[16].assign("Tanto", "Katana corta de filo pobre", 3, 6, 0, 0, 2, 0, 0);
 
         equips[17].assign("Estola", "Estola basica para sacerdotes", 0, 7, 5, 5, 0, 0, 0);
