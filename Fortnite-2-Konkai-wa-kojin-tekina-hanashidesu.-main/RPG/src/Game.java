@@ -66,6 +66,8 @@ public class Game implements Serializable {
         statusEffects[9].assign(6, true, "Vinculo simbiotico", "contiene el poder del general...", "forma un vinculo con el general.", "rompe su vinculo con el general.");
         statusEffects[10].assign(1, false, "Siesta", "duerme como una roca...", "cae al suelo.", "desperto de su sueño.");
         statusEffects[11].assign(2, false, "Niebla", "fallo su ataque...", "es envuelto en la neblina.", "se ha librado de la neblina.");
+        statusEffects[12].assign(8, false, "Veneno", "recibe daño por el veneno...", "es envenenado por el ataque.", "se ha curado del veneno.");
+        statusEffects[13].assign(5, true, "Fractura", "se retuerce de dolor...", "se fracturó un hueso.", "se recupera de sus fracturas.");
 
         moves[0].assign(0, 0, "Ataque", "", "ataca!", 1, 0, 1, -1, 0, 0, 0, -1, false, 1); //no borren este, es el ataque principal
         items[0].assign("", "", "", 0, 0, -1, 0, 0, -1, 0); //de 0 a 99 son movimientos, de 100 a 199 son objetos
@@ -169,6 +171,26 @@ public class Game implements Serializable {
         moves[36].assign(10, 0, "Curación: Vinculo", "Cura el efecto de estado.", "cura a su aliado.", 2, 0, 0, -1, 0, 0, 0, 9, false, 1);
         moves[37].assign(10, 0, "Curación: Siesta", "Cura el efecto de estado.", "cura a su aliado.", 2, 0, 0, -1, 0, 0, 0, 10, false, 1);
 
+        enemy[1].assign("Rata", "Y la cheese", 10, 0, 5, 0, 4, new int[]{38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 3);
+        moves[38].assign(0, 0, "Mordida", "Mordida cargada de infecciones", "te muerde!", 1, 0, 1, 12, 3, 0, 0, -1, false, 1);
+        enemy[2].assign("Guardia", "Antes los hombres iban a la guerra *se fuma un puro*", 40, 10, 15, 3, 5, new int[]{7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 6);
+        enemy[3].assign("Murciélago", "El señor de la noche", 10, 0, 5, 0, 6, new int[]{38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 4);
+        enemy[4].assign("Prisionero loco", "Si tomas un momento para verlo a los ojos te darás cuenta que en algún momento fue un hombre como tú que no logró escapar.", 200, 50, 18, 5, 6, new int[]{39, 15, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 3);
+        moves[39].assign(10, 0, "Asalto furioso", "", "grita y se abalanza contra ti!", 1, 5, 1, -1, 0, 0, 0, -1, false, 5);
+        moves[40].assign(30, 0, "Abrazo de oso", "", "te abraza y te estruje con fuerza!", 1, 0, 3, 13, 1, 0, 0, -1, true, 1);
+
+
+
+        enemyTroop[1][0] = 1;
+        enemyTroop[1][1] = 1;
+        enemyTroop[2][0] = 2;
+        enemyTroop[3][0] = 1;
+        enemyTroop[3][1] = 3;
+        enemyTroop[3][2] = 1;
+        enemyTroop[4][0] = 4;
+        enemyTroop[4][1] = 1;
+
+
         rooms[99].assignBasic(7, "Cuarto De Prueba", "Estas en el cuarto de prueba");
         rooms[99].assignOption(0, "Conseguir dinero del banco.", new int[]{11, 7, 0, 0, 0}, new String[]{"Contraseña", "conseguiste 200 dinero!", "", "", ""}, new int[]{19, 200, 0, 0, 0});
         passwords[19] = "Password";
@@ -203,7 +225,7 @@ public class Game implements Serializable {
       
         rooms[3].assignBasic(6, "Jaula", "Una celda fria y oscura...");
         rooms[3].assignOption(0, "Descansar en la cama", new int[]{10, 0, 0, 0, 0}, new String[]{"Duermes en la cama unas horas...", "Despiertas lleno de energía!", "", "", ""}, new int[]{0, 0, 0, 0, 0});
-        rooms[3].assignOption(1, "Revisar debajo de la cama", new int[]{0, 2, 7, 9, 0}, new String[]{"Encuentras un par de monedas!", "Pero una rata salta hacia ti!", "Encontraste 10 monedas.", "", ""}, new int[]{0, 69, 10, 1, 0});
+        rooms[3].assignOption(1, "Revisar debajo de la cama", new int[]{0, 2, 7, 9, 0}, new String[]{"Encuentras un par de monedas!", "Pero una rata salta hacia ti!", "Encontraste 10 monedas.", "", ""}, new int[]{0, 1, 10, 1, 0});
         rooms[3].assignOption(2, "Tomar el latigo a traves de los barrotes", new int[]{0, 0, 5, 9, 0}, new String[]{"Ves el latigo con el que te torturan a traves de los barrotes al lado de la silla en la que esta sentado el guardia", "Intentas alcanzarlo a traves de los barrotes...", "Conseguiste el latigo de paja!", "", ""}, new int[]{0, 0, 8, 1, 0});
         rooms[3].assignOption(3, "Abrir la celda", new int[]{6, 1, 0, 0, 0}, new String[]{"Intentas abrir la celda...", "Abres la puerta sin problemas.", "", "", ""}, new int[]{0, 4, 0, 0, 0});
         rooms[3].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "", ""}, new int[]{0, 2, 40, 2, 1});
