@@ -151,9 +151,15 @@ public class Game implements Serializable {
         rooms[2].assignBasic(11, "Nut room", "Ayo is that the nut room??");
         rooms[2].assignOption(0, "Nuez", new int[]{0, 0, 0, 0, 0}, new String[]{"", "", "", "", ""}, new int[]{0, 0, 0, 0, 0});
 
+        rooms[3].assignBasic(6, "Jaula", "Una celda fria y oscura...");
+        rooms[3].assignOption(0, "Descansar en la cama", new int[]{10, 0, 0, 0, 0}, new String[]{"Duermes en la cama unas horas...", "Despiertas lleno de energía!", "", "", ""}, new int[]{0, 0, 0, 0, 0});
+        rooms[3].assignOption(1, "Revisar debajo de la cama", new int[]{0, 2, 7, 9, 0}, new String[]{"Encuentras un par de monedas!", "Pero una rata salta hacia ti!", "Encontraste 10 monedas.", "", ""}, new int[]{0, 69, 10, 1, 0});
+        rooms[3].assignOption(2, "Tomar el latigo a traves de los barrotes", new int[]{0, 0, 5, 9, 0}, new String[]{"Ves el latigo con el que te torturan a traves de los barrotes al lado de la silla en la que esta sentado el guardia", "Intentas alcanzarlo a traves de los barrotes...", "Conseguiste el latigo de paja!", "", ""}, new int[]{0, 0, 8, 1, 0});
+        rooms[3].assignOption(3, "Abrir la celda", new int[]{6, 1, 0, 0, 0}, new String[]{"Intentas abrir la celda...", "Abres la puerta sin problemas.", "", "", ""}, new int[]{0, 4, 0, 0, 0});
+        rooms[3].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "", ""}, new int[]{0, 2, 40, 2, 1});
+
         equips[1].assign("Fedora", "El favorito de los reditores", 0, 3, 0, 0, 0, 0, -1);
     }
-
     public void play() {
         started = true;
         while (continyu == 0) {
