@@ -70,7 +70,55 @@ public class Game implements Serializable {
         moves[0].assign(0, 0, "Ataque", "", "ataca!", 1, 0, 1, -1, 0, 0, 0, -1, false, 1); //no borren este, es el ataque principal
         items[0].assign("", "", "", 0, 0, -1, 0, 0, -1, 0); //de 0 a 99 son movimientos, de 100 a 199 son objetos
 
-        equips[0].assign("Vacio", "", 0, 0, 0, 0, 0, 0, 0);
+        equips[1].assign("Sombrero magico", "Un viejo y empolvado sombrero para magos", 0, 3, 0, 10, 0, 1, 0);
+        equips[2].assign("Bata de mago", "Bata de mago", 1, 3, 5, 0, 0, 1, 0);
+        equips[3].assign("Collar Antiguo", "Un collar barato que irradia mana", 2, 3, 5, 5, 0, 0, 0);
+        equips[4].assign("Grimorio", "Un libro de hechizos para principiantes", 3, 3, 0, 0, 1, 0, 1);
+
+        equips[5].assign("Boina militar", "Boina del ejercito de pisos picados", 0, 4, 5, 0, 0, 1, 0);
+        equips[6].assign("Atuendo militar", "Atuendo militar del ejercito de pisos picados", 1, 4, 10, 0, 1, 0, 0);
+        equips[7].assign("Brazal", "Brazal militar del ejercito de pisos picados", 2, 4, 0, 0, 1, 1, 0);
+        equips[8].assign("Latigo de paja", "Latigo viejo hecho con paja", 3, 4, 0, 0, 1, 0, 0);
+
+        equips[9].assign("Craneo robusto", "Jorgelon cuenta con un tamaño de craneo mayor al promedio", 0, 5, 10, 0, 0, 2, -1);
+        equips[10].assign("Grasa extra", "Grasa corporal extra que cubre su piel", 1, 5, 5, 0, 0, 2, -1);
+        equips[11].assign("Pañuelo arrugado", "Pañuelo que limpia los restos despues de comer", 2, 5, 0, 0, 1, 0, 2);
+        equips[12].assign("Vacio", "No necesita arma, usa su boca para atacar", 3, 5, 0, 0, 0, 0, 0);
+
+        equips[13].assign("Cubrebocas oscuro", "Cubrebocas que brinda sigilo", 0, 6, 5, 0, 0, 0, 1);
+        equips[14].assign("Armadura basica", "Armadura que cubre solo lo escencial", 1, 6, 10, 0, 0, 2, 0);
+        equips[15].assign("Bufanda negra", "Bufanda larga y ligera que cubre a su usuario", 2, 6, 5, 0, 0, 0, 2);
+        equips[16].assign("Tanto", "Katana corta de filo pobre", 3, 6, 0, 0, 2, 0, 0);
+
+        equips[17].assign("Estola", "Estola basica para sacerdotes", 0, 7, 5, 5, 0, 0, 0);
+        equips[18].assign("Tunica de sacerdote", "Tunica basica para sacerdotes", 1, 7, 5, 5, 0, 0, 0);
+        equips[19].assign("Agua Bendita con glitter", "Agua bendecida por un sacerdote de 2da", 2, 7, 0, 10, 0, 1, 0);
+        equips[20].assign("Báculo mágico", "Baculo de sacerdotes aprendices", 3, 7, 0, 10, 1, 0, 0);
+
+        equips[21].assign("Diadema de oro", "Una diadema de oro con un rubi", 0, 3, 5, 15, 0, 1, 0);
+        equips[22].assign("Tunica de hechicero", "Tunica para magos experimentados", 1, 3, 10, 25, 0, 2, 0);
+        equips[23].assign("Anillo de oro", "Anillo comun entre los magos", 2, 3, 0, 10, 0, 0, 0);
+        equips[24].assign("Grimorio avanzado", "", 3, 3, 0, 0, 0, 0, 0);
+
+        equips[25].assign("", "", 0, 4, 0, 0, 0, 0, 0);
+        equips[26].assign("", "", 1, 4, 0, 0, 0, 0, 0);
+        equips[27].assign("", "", 2, 4, 0, 0, 0, 0, 0);
+        equips[28].assign("", "", 3, 4, 0, 0, 0, 0, 0);
+
+        equips[29].assign("", "", 0, 5, 0, 0, 0, 0, 0);
+        equips[30].assign("", "", 1, 5, 0, 0, 0, 0, 0);
+        equips[31].assign("", "", 2, 5, 0, 0, 0, 0, 0);
+        equips[32].assign("", "", 3, 5, 0, 0, 0, 0, 0);
+
+        equips[33].assign("Kabuto", "Casco tradicional japones", 0, 6, 5, 0, 1, 2, 0);
+        equips[34].assign("Armadura de samurai", "Armadura tradicional japonesa", 1, 6, 10, 0, 0, 3, -1);
+        equips[35].assign("Mascara de oni", "Mascara hecha con piel de un oni rojo", 2, 6, 5, 5, 0, 0, 1);
+        equips[36].assign("Katana", "Katana comun de filo superior", 3, 6, 0, 0, 5, 0, -1);
+
+        equips[37].assign("", "", 0, 7, 0, 0, 0, 0, 0);
+        equips[38].assign("", "", 1, 7, 0, 0, 0, 0, 0);
+        equips[39].assign("", "", 2, 7, 0, 0, 0, 0, 0);
+        equips[40].assign("", "", 3, 7, 0, 0, 0, 0, 0);
 
         Battle.LEVEL_MAX = 30;
         protag[3].assign("Andrea", "Una hechicera", 70, 150, 5, 0, 5, new int[]{1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0});
@@ -151,14 +199,14 @@ public class Game implements Serializable {
         rooms[2].assignBasic(11, "Nut room", "Ayo is that the nut room??");
         rooms[2].assignOption(0, "Nuez", new int[]{0, 0, 0, 0, 0}, new String[]{"", "", "", "", ""}, new int[]{0, 0, 0, 0, 0});
 
+        equips[99].assign("Fedora", "El favorito de los reditores", 0, 5, 0, 0, 0, 0, -1);
+      
         rooms[3].assignBasic(6, "Jaula", "Una celda fria y oscura...");
         rooms[3].assignOption(0, "Descansar en la cama", new int[]{10, 0, 0, 0, 0}, new String[]{"Duermes en la cama unas horas...", "Despiertas lleno de energía!", "", "", ""}, new int[]{0, 0, 0, 0, 0});
         rooms[3].assignOption(1, "Revisar debajo de la cama", new int[]{0, 2, 7, 9, 0}, new String[]{"Encuentras un par de monedas!", "Pero una rata salta hacia ti!", "Encontraste 10 monedas.", "", ""}, new int[]{0, 69, 10, 1, 0});
         rooms[3].assignOption(2, "Tomar el latigo a traves de los barrotes", new int[]{0, 0, 5, 9, 0}, new String[]{"Ves el latigo con el que te torturan a traves de los barrotes al lado de la silla en la que esta sentado el guardia", "Intentas alcanzarlo a traves de los barrotes...", "Conseguiste el latigo de paja!", "", ""}, new int[]{0, 0, 8, 1, 0});
         rooms[3].assignOption(3, "Abrir la celda", new int[]{6, 1, 0, 0, 0}, new String[]{"Intentas abrir la celda...", "Abres la puerta sin problemas.", "", "", ""}, new int[]{0, 4, 0, 0, 0});
         rooms[3].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "", ""}, new int[]{0, 2, 40, 2, 1});
-
-        equips[1].assign("Fedora", "El favorito de los reditores", 0, 3, 0, 0, 0, 0, -1);
     }
     public void play() {
         started = true;
