@@ -191,7 +191,7 @@ public class Character extends Common {
                         curHP -= 5;
                         break;
                     case 9:
-                        curMP -= 1;
+                        curMP -= 5;
                         break;
                 }
                 if(!statusEffects[i].infinite) {
