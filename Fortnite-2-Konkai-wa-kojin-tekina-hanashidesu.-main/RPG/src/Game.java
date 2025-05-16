@@ -80,6 +80,7 @@ public class Game implements Serializable {
         keyItems[1].assign("Llave de la celda", "Una llave vieja y oxidada.");
         keyItems[2].assign("Carne de alimaña cruda", "Quizás no sepa tan mal asada...");
         keyItems[3].assign("Carne de ganado cruda", "Carne cruda de calidad media.");
+        keyItems[4].assign("Insignia del ejercito de pisos picados", "Una insignia otorgada a aquellos que sirven al emperador de pisos picados.");
 
         equips[0].assign("", "", 0, 0, 0, 0, 0, 0, 0);
 
@@ -88,8 +89,8 @@ public class Game implements Serializable {
         equips[3].assign("Collar Antiguo", "Un collar barato que irradia mana.", 2, 3, 0, 10, 0, 1, 0);
         equips[4].assign("Grimorio", "Un libro de hechizos para principiantes.", 3, 3, 0, 0, 1, 0, 1);
 
-        equips[5].assign("Boina militar", "Boina del ejercito de pisos picados.", 0, 4, 5, 0, 0, 1, 0);
-        equips[6].assign("Atuendo militar", "Atuendo militar del ejercito de pisos picados.", 1, 4, 10, 0, 1, 0, 0);
+        equips[5].assign("Boina militar", "Boina del ejercito de pisos picados.", 0, 4, 5, 0, 1, 0, 0);
+        equips[6].assign("Atuendo militar", "Atuendo militar del ejercito de pisos picados.", 1, 4, 10, 0, 0, 1, 0);
         equips[7].assign("Brazal", "Brazal militar del ejercito de pisos picados.", 2, 4, 0, 0, 1, 1, 0);
         equips[8].assign("Latigo de paja", "Latigo viejo hecho con paja.", 3, 4, 0, 0, 1, 0, 0);
 
@@ -113,10 +114,10 @@ public class Game implements Serializable {
         equips[23].assign("Anillo de oro", "Anillo comun entre los magos.", 2, 3, 0, 10, 2, 0, 0);
         equips[24].assign("Grimorio avanzado", "Un libro de hechizos portado por magos experimentados.", 3, 3, 0, 0, 3, 0, 0);
 
-        equips[25].assign("", "", 0, 4, 0, 0, 0, 0, 0);
-        equips[26].assign("", "", 1, 4, 0, 0, 0, 0, 0);
-        equips[27].assign("", "", 2, 4, 0, 0, 0, 0, 0);
-        equips[28].assign("", "", 3, 4, 0, 0, 0, 0, 0);
+        equips[25].assign("Capucha de nigromante", "Una capucha color carmín que oculta el rostro de su portador.", 0, 4, 0, 10, 0, 0, 1);
+        equips[26].assign("Toga de nigromante", "Una toga color carmín con un estampado extraño.", 1, 4, 0, 15, 2, 0, 0);
+        equips[27].assign("Anillo de serpiente", "Un anillo con forma de serpiente.", 2, 4, -10, 15, 2, 0, 1);
+        equips[28].assign("Necronomicon", "Un libro antiguo que portaban aquellos que se entregaron a las artes oscuras.", 3, 4, -10, 20, 4, -1, 1);
 
         equips[29].assign("", "", 0, 5, 0, 0, 0, 0, 0);
         equips[30].assign("", "", 1, 5, 0, 0, 0, 0, 0);
@@ -245,19 +246,36 @@ public class Game implements Serializable {
 
         equips[99].assign("Fedora", "El favorito de los reditores", 0, 5, 0, 0, 0, 0, -1);
       
-        rooms[3].assignBasic(6, "Jaula", "Una celda fria y oscura... \n Hay un latigo justo fuera de los barrotes.");
-        rooms[3].assignOption(0, "Descansar en la cama", new int[]{10, 0, 0, 0, 0}, new String[]{"Duermes en la cama unas horas...", "Despiertas lleno de energía!", "", "", ""}, new int[]{0, 0, 0, 0, 0});
-        rooms[3].assignOption(1, "Revisar debajo de la cama", new int[]{0, 2, 7, 4, 9}, new String[]{"Encuentras un par de monedas...", "Pero unas ratas saltan hacia ti!", "Encontraste 10 monedas!", "Conseguiste carne de alimaña cruda!", ""}, new int[]{0, 1, 10, 2, 1});
-        rooms[3].assignOption(2, "Tomar el latigo a traves de los barrotes", new int[]{0, 0, 5, 9, 0}, new String[]{"Ves el latigo con el que te torturan a traves de los barrotes al lado de la silla en la que esta sentado el guardia", "Intentas alcanzarlo a traves de los barrotes...", "Conseguiste el latigo de paja!", "", ""}, new int[]{0, 0, 8, 1, 0});
-        rooms[3].assignOption(3, "Abrir la celda", new int[]{6, 9, 1, 0, 0}, new String[]{"Intentas abrir la celda...", "Abres la puerta sin problemas.", "", "", ""}, new int[]{1, 0, 4, 0, 0});
-        rooms[3].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "", ""}, new int[]{0, 2, 40, 1, 1});
+        rooms[3].assignBasic(5, "Jaula", "Una celda fria y oscura... \n Hay un latigo justo fuera de los barrotes.");
+        rooms[3].assignOption(0, "Abrir la celda", new int[]{6, 9, 1, 0, 0}, new String[]{"Intentas abrir la celda...", "Abres la puerta sin problemas.", "", "", ""}, new int[]{1, 0, 4, 0, 0});
+        rooms[3].assignOption(1, "Descansar en la cama", new int[]{10, 14, 0, 0, 0}, new String[]{"Duermes en la cama unas horas...", "", "Despiertas lleno de energía!", "", ""}, new int[]{0, 0, 0, 0, 0});
+        rooms[3].assignOption(2, "Revisar debajo de la cama", new int[]{0, 2, 7, 4, 9}, new String[]{"Encuentras un par de monedas...", "Pero unas ratas saltan hacia ti!", "Encontraste 10 monedas!", "Conseguiste carne de alimaña cruda!", ""}, new int[]{0, 1, 10, 2, 1});
+        rooms[3].assignOption(3, "Tomar el latigo a traves de los barrotes", new int[]{0, 0, 5, 9, 0}, new String[]{"Ves el latigo con el que te torturan a traves de los barrotes al lado de la silla en la que esta sentado el guardia", "Intentas alcanzarlo a traves de los barrotes...", "Conseguiste el latigo de paja!", "", ""}, new int[]{0, 0, 8, 1, 0});
+        rooms[3].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "Consigues la llave de la jaula!", ""}, new int[]{0, 2, 40, 1, 1});
 
-        rooms[4].assignBasic(6, "Mazmorras", "La mayoría no salen con vida de estas mazmorras... \nVes un grupo de ratas rodeando algo.");
-        rooms[4].assignOption(0, "Regresar a tu celda", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas a tu celda.", "", "", "", ""}, new int[]{3, 0, 0, 0, 0});
-        rooms[4].assignOption(1, "Acercarse a las ratas", new int[]{0, 2, 3, 4, 9}, new String[]{"Te acercas a las ratas...", "Pero te atacan!", "", "Conseguiste carne de alimaña cruda!", ""}, new int[]{0, 1, 2, 2, 1});
-        rooms[4].assignOption(2, "Tomar el latigo a traves de los barrotes", new int[]{0, 0, 5, 9, 0}, new String[]{"Ves el latigo con el que te torturan a traves de los barrotes al lado de la silla en la que esta sentado el guardia", "Intentas alcanzarlo a traves de los barrotes...", "Conseguiste el latigo de paja!", "", ""}, new int[]{0, 0, 8, 1, 0});
-        rooms[4].assignOption(3, "Abrir la celda", new int[]{6, 9, 1, 0, 0}, new String[]{"Intentas abrir la celda...", "Abres la puerta sin problemas.", "", "", ""}, new int[]{1, 0, 4, 0, 0});
-        rooms[4].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "", ""}, new int[]{0, 2, 40, 1, 1});
+        rooms[4].assignBasic(5, "Mazmorras-1", "La mayoría no salen con vida de estas mazmorras... \nVes un grupo de ratas rodeando algo.");
+        rooms[4].assignOption(0, "Regresar a tu celda", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas a tu celda...", "", "", "", ""}, new int[]{3, 0, 0, 0, 0});
+        rooms[4].assignOption(1, "Acercarse a las ratas", new int[]{0, 2, 3, 4, 9}, new String[]{"Te acercas a las ratas...", "Pero te atacan!", "Conseguiste pan mohoso!", "Conseguiste carne de alimaña cruda!", ""}, new int[]{0, 1, 2, 2, 1});
+        rooms[4].assignOption(2, "Saquear el cuerpo del guardia", new int[]{5, 5, 5, 4, 9}, new String[]{"Conseguiste la boina militar!", "Conseguiste el atuendo militar!", "Conseguiste el brazal militar!", "Conseguiste una insignia de guardia!", ""}, new int[]{5, 6, 7, 4, 1});
+        rooms[4].assignOption(3, "Salir de las mazmorras por las escaleras", new int[]{1, 0, 0, 0, 0}, new String[]{"Subes las escaleras...", "", "", "", ""}, new int[]{0, 0, 0, 0, 0});
+        rooms[4].assignOption(4, "Explorar las mazmorras", new int[]{1, 0, 0, 0, 0}, new String[]{"Continuas explorando los corredores de las mazmorras...", "", "", "", ""}, new int[]{5, 0, 0, 0, 0});
+        rooms[5].assignBasic(3, "Mazmorras-2", "La mayoría no salen con vida de estas mazmorras... \nVes una pila con restos de ratas y murcielagos fuera de una celda...");
+        rooms[5].assignOption(0, "Regresar", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas por donde viniste...", "", "", "", ""}, new int[]{4, 0, 0, 0, 0});
+        rooms[5].assignOption(1, "Ir hacia los restos", new int[]{1, 0, 0, 0, 0}, new String[]{"Sigues el rastro de los restos...", "", "", "", ""}, new int[]{6, 0, 0, 0, 0});
+        rooms[5].assignOption(2, "Explorar más profundo", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas a tu celda...", "", "", "", ""}, new int[]{8, 0, 0, 0, 0});
+        rooms[6].assignBasic(2, "Celda de Jorgelon", "No puedes evitar sentir nauseas al ver todas esas ratas...");
+        rooms[6].assignOption(0, "Regresar", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas a tu celda...", "", "", "", ""}, new int[]{5, 0, 0, 0, 0});
+        rooms[6].assignOption(1, "Hablar con la persona", new int[]{1, 9, 0, 0, 0}, new String[]{"Intentas hablar con el gordinflon...", "", "", "", ""}, new int[]{7, 1, 0, 0, 0});
+        rooms[7].assignBasic(3, "Jorgelon", "Interrumpes el festin de ratas de la persona... \n?:Urghh ñom ñaom...\n!\n¿Quien anda ahí? ¿Acaso has venido a robarte mi comida?");
+        rooms[7].assignOption(0, "Sí.", new int[]{0, 0, 0, 15, 0}, new String[]{"......", "?:¡JA! ¡JAJAJAJA!\n  ¡Como si fuera a permitirte hacer eso, pequeñin!", "La persona se acerca a ti y te sujeta con ambos brazos...\nSientes que esta al borde de romperte los huesos...", "La persona abre su enorme boca y le pega un mordisco a tu cabeza!", ""}, new int[]{7, 1, 0, 0, 0});
+        rooms[7].assignOption(1, "No, que asco.", new int[]{0, 1, 0, 0, 0}, new String[]{"?:¡JA! ¡Pues más para mi!", "Decides que no quieres tener nada que ver con esta persona.", "", "", ""}, new int[]{0, 6, 0, 0, 0});
+        rooms[7].assignOption(2, "No, he venido a sacarte de aquí.", new int[]{0, 0, 0, 8, 1}, new String[]{"?:¿¡De verdad!?\nGeneral: Eh... sí.\nJorgelon:¡Grandioso! Me llamo Jorgelon, ¡pero me dicen Yorgelon comelon!", "General:¿Como es que te capturaron en primer lugar? No pareces alguien fácil de... eh... mover.\nJorgelon:¡JA! ¡Ninguno de esos guardias debiluchos podrían conmigo!... Sin embargo... la guardia real del rey es otra historia... ¡ellos me dieron una paliza y me encerraron aquí solo por tomar un poco de comida de unos puestos de vendedores!", "General:Entonces ven conmigo, tengo pensado ejecutar al rey, estoy seguro que podras vengarte de esos guardias en el camino.\nJorgelon:¡Cuenta conmigo!", "Jorgelon se ha unido a tu equipo.", ""}, new int[]{0, 0, 0, 5, 6});
+        rooms[8].assignBasic(2, "Mazmorras-3", "La mayoría no salen con vida de estas mazmorras... \nMuchos de los prisioneros en esta zona parecen estar aterrados de algo...");
+        rooms[8].assignOption(0, "Regresar", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas por donde viniste...", "", "", "", ""}, new int[]{5, 0, 0, 0, 0});
+        rooms[8].assignOption(1, "Ir más profundo", new int[]{1, 0, 0, 0, 0}, new String[]{"Te adentras más profundo en las mazmorras...", "", "", "", ""}, new int[]{9, 0, 0, 0, 0});
+        rooms[9].assignBasic(5, "Mazmorras-4", "Ves a un prisionero solitario al final del pasillo...");
+        rooms[9].assignOption(0, "Regresar", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas por donde viniste...", "", "", "", ""}, new int[]{8, 0, 0, 0, 0});
+        rooms[9].assignOption(1, "Acercarse al prisionero", new int[]{0, 2, 0, 0, 9}, new String[]{"Te acercas al prisionero...\nLo escuchas murmurarse cosas a si mismo...\nEl prisionero nota tu presencia...", "El prisionero enfurecido rompe los barrotes de su celda y se abalanza contra ti!", "", "", ""}, new int[]{0, 4, 0, 0, 1});
     }
     public void play() {
         started = true;
