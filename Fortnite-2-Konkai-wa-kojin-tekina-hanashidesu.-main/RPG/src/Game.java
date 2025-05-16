@@ -147,7 +147,7 @@ public class Game implements Serializable {
         moves[8].assign(30, 0, "Inducción a la locura", "Enloquece a un enemigo provocando que ataque de forma aleatoria.", "susurra algo al enemigo...", 1, 0, 0, 5, 5, 0, 0, -1, false, 1);
         moves[9].assign(15, 1, "Sanguijuelas", "Invoca sanguijuelas para que consuman el mana del oponente.", "invoca sanguijuelas sobre el enemigo!", 1, 1, 0, 6, 6, 0, 0, -1, false, 7);
         moves[10].assign(40, 1, "Maldición", "Coloca un sello de maldición sobre el oponente, impidiendo su curación.", "coloca un sello maldito sobre el enemigo!", 1, 0, 0, 7, 1, 0, 0, -1, false, 1);
-        moves[11].assign(15, 1, "Drenadoras", "Lanza semillas a los oponentes que consumiran su energía vital.", "lanza un par de semillas a el enemigo!", 1, 0, 0, 8, 0, 6, 0, -1, false, 1);
+        moves[11].assign(15, 1, "Drenadoras", "Lanza semillas a los oponentes que consumiran su energía vital.", "lanza un par de semillas a el enemigo!", 1, 0, 0, 8, 6, 0, 0, -1, false, 1);
         moves[12].assign(40, 40, "Vinculo simbiotico", "Establece un vinculo con un aliado, restaurando gran parte de su fuerza, pero impidiendo que se curen.", "pone su mano sobre su aliado...", 2, 0, 0, 9, 1, 300, 300, 2, false, 1);
 
         protag[5].assign("Jorgelon", "El más comelon", 225, 20, 25, 10, 1, new int[]{13, 14, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{5, 5, 5, 5});
@@ -239,7 +239,7 @@ public class Game implements Serializable {
         rooms[3].assignOption(1, "Revisar debajo de la cama", new int[]{0, 2, 7, 4, 9}, new String[]{"Encuentras un par de monedas...", "Pero unas ratas saltan hacia ti!", "Encontraste 10 monedas!", "Conseguiste carne de alimaña cruda!", ""}, new int[]{0, 1, 10, 2, 1});
         rooms[3].assignOption(2, "Tomar el latigo a traves de los barrotes", new int[]{0, 0, 5, 9, 0}, new String[]{"Ves el latigo con el que te torturan a traves de los barrotes al lado de la silla en la que esta sentado el guardia", "Intentas alcanzarlo a traves de los barrotes...", "Conseguiste el latigo de paja!", "", ""}, new int[]{0, 0, 8, 1, 0});
         rooms[3].assignOption(3, "Abrir la celda", new int[]{6, 9, 1, 0, 0}, new String[]{"Intentas abrir la celda...", "Abres la puerta sin problemas.", "", "", ""}, new int[]{1, 0, 4, 0, 0});
-        rooms[3].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "", ""}, new int[]{0, 2, 40, 1, 1});
+        rooms[3].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "", ""}, new int[]{0, 2, 40, 1, 0});
     }
     public void play() {
         started = true;
@@ -325,14 +325,8 @@ public class Game implements Serializable {
                             }
                             break;
                         case 9: //effect id = 0 -> se mantiene la opcion, y solo se quita el efecto, effect id = 1 -> se quita la opcion completamente
-                            String optionName = "";
-                            if (rooms[roomid].effectID[a - 1][choice] == 0)
-                                optionName = rooms[roomid].optionName[choice];
-                            else if (rooms[roomid].effectID[a - 1][choice] == 1) {
-                                optionName = "";
-                                rooms[roomid].options -= 1;
-                            }
-                            rooms[roomid].assignSingleOption(choice, (a - 1), optionName, 0, "", 0);
+                            if (rooms[roomid].effectID[a][choice] == 0) rooms[roomid].assignSingleOption(choice, (a - 1), rooms[roomid].optionName[choice], 0, "", 0);
+                            else if (rooms[roomid].effectID[a][choice] == 1) rooms[roomid].assignOption(choice, "", new int[]{0, 0, 0, 0, 0}, new String[]{"", "", "", "", ""}, new int[]{0, 0, 0, 0, 0});
                             break;
                         case 10: //regenerate all health
                             for (int i = 0; i < 3; i++) {
@@ -462,7 +456,7 @@ public class Game implements Serializable {
                                     case 0, 1, 2:
                                         continyuMenu = 3;
                                         while (continyuMenu == 3) {
-                                            System.out.println("La armadura de " + protag[choiceMenu].name
+                                            System.out.println("La armadura de " + protag[party[choiceMenu]].name
                                                     + "\n  1. Cabeza: " + equips[protag[choiceMenu].equip[0]].name + "\n  2. Cuerpo: " + equips[protag[choiceMenu].equip[1]].name
                                                     + "\n  3. Accesorio: " + equips[protag[choiceMenu].equip[2]].name + "\n  4. Arma: " + equips[protag[choiceMenu].equip[3]].name
                                                     + "\n    ¿Cual Accesorio quieres cambiar?");
