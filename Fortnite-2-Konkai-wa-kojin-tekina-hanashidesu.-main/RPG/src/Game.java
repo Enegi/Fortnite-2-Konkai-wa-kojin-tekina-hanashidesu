@@ -83,6 +83,11 @@ public class Game implements Serializable {
 
         equips[0].assign("", "", 0, 0, 0, 0, 0, 0, 0);
 
+
+        //objetos-equipamiento por personaje
+
+        //set incial
+
         equips[1].assign("Sombrero magico", "Un viejo y empolvado sombrero para magos.", 0, 3, 0, 15, 0, 0, 0);
         equips[2].assign("Bata de mago", "Bata de mago.", 1, 3, 5, 10, 0, 1, 0);
         equips[3].assign("Collar Antiguo", "Un collar barato que irradia mana.", 2, 3, 0, 10, 0, 1, 0);
@@ -96,7 +101,7 @@ public class Game implements Serializable {
         equips[9].assign("Craneo robusto", "Jorgelon cuenta con un tamaño de craneo mayor al promedio.", 0, 5, 10, 0, 0, 2, -1);
         equips[10].assign("Grasa extra", "Grasa corporal extra que cubre su piel.", 1, 5, 5, 0, 0, 2, -1);
         equips[11].assign("Pañuelo arrugado", "Pañuelo que limpia los restos despues de comer.", 2, 5, 0, 5, 1, 0, 0);
-        equips[12].assign("Vacio", "No necesita arma, usa su boca para atacar.", 3, 5, 0, 0, 0, 0, 0);
+        equips[12].assign("Vacio", "No necesita arma, usa su boca para atacar.", 3, 5, 0, 0, 2, -2, 0);
 
         equips[13].assign("Cubrebocas oscuro", "Cubrebocas que brinda sigilo.", 0, 6, 5, 0, 0, 0, 2);
         equips[14].assign("Armadura basica", "Armadura que cubre solo lo esencial.", 1, 6, 10, 0, 0, 2, 0);
@@ -108,6 +113,8 @@ public class Game implements Serializable {
         equips[19].assign("Agua Bendita con glitter", "Agua bendecida por un sacerdote de 2da.", 2, 7, 0, 10, 0, 1, 0);
         equips[20].assign("Báculo mágico", "Baculo de sacerdotes aprendices.", 3, 7, 0, 10, 0, 1, 0);
 
+        //Segundo set - set intermedio
+
         equips[21].assign("Diadema de oro", "Una diadema de oro con un rubi.", 0, 3, 5, 15, 0, 1, 0);
         equips[22].assign("Tunica de hechicero", "Tunica para magos experimentados.", 1, 3, 5, 25, 0, 2, 0);
         equips[23].assign("Anillo de oro", "Anillo comun entre los magos.", 2, 3, 0, 10, 2, 0, 0);
@@ -118,31 +125,57 @@ public class Game implements Serializable {
         equips[27].assign("", "", 2, 4, 0, 0, 0, 0, 0);
         equips[28].assign("", "", 3, 4, 0, 0, 0, 0, 0);
 
-        equips[29].assign("", "", 0, 5, 0, 0, 0, 0, 0);
-        equips[30].assign("", "", 1, 5, 0, 0, 0, 0, 0);
-        equips[31].assign("", "", 2, 5, 0, 0, 0, 0, 0);
-        equips[32].assign("", "", 3, 5, 0, 0, 0, 0, 0);
+        equips[29].assign("Casco vikingo", "Casco dejado por guerreros del pasado", 0, 5, 5, 0, 2, 2, 0);
+        equips[30].assign("Coraza de piel", "Pechera de cuero grueso", 1, 5, 15, 0, 0, 2, -1);
+        equips[31].assign("Falda de guerra", "Falda desgastada, parece de otro lugar", 2, 5, 10, 0, 0, 1, 1);
+        equips[32].assign("Mazo pesado", "Mazo bardado de corto alcance", 3, 5, 0, 0, 3, 1, -1);
 
         equips[33].assign("Kabuto", "Casco tradicional japones", 0, 6, 5, 0, 1, 2, 0);
         equips[34].assign("Armadura de samurai", "Armadura tradicional japonesa", 1, 6, 10, 0, 0, 3, -1);
         equips[35].assign("Mascara de oni", "Mascara hecha con piel de un oni rojo", 2, 6, 5, 5, 0, 0, 1);
         equips[36].assign("Katana", "Katana comun de filo superior", 3, 6, 0, 0, 5, 0, -1);
 
-        equips[37].assign("", "", 0, 7, 0, 0, 0, 0, 0);
-        equips[38].assign("", "", 1, 7, 0, 0, 0, 0, 0);
-        equips[39].assign("", "", 2, 7, 0, 0, 0, 0, 0);
-        equips[40].assign("", "", 3, 7, 0, 0, 0, 0, 0);
+        equips[37].assign("Tiara de cristal", "Una tiara de cuentas de cristal", 0, 7, 10, 10, 0, 1, 0);
+        equips[38].assign("Túnicas de seda", "Túnicas hechas de seda de araña, muy resistente", 1, 7, 15, 0, 0, -1, 2);
+        equips[38].assign("Galleta", "Una galleta que parece tener vida propia, si se presta atencion parece recitar una tonadilla", 2, 7, 5, 5, 0, 0, 1);
+        equips[39].assign("Baculo aflorado", "Un baculo hecho de ramas adornado con flores. Pulsa con poder", 3, 7, 5, 15, 0, 0, 0);
 
-        equips[41].assign("Tiara de cristal", "Una tiara de cuentas de cristal", 0, 7, 10, 8, 0, 1, 3);
-        equips[42].assign("Túnicas de seda", "Túnicas hechas de seda de araña, muy resistente", 1, 7, 15, 0, 0, 5, 2);
-        equips[43].assign("Galleta", "Una galleta que parece tener vida propia, si se presta atencion parece recitar una tonadilla", 2, 7, 3, 1, 0, 0, 0);
-        equips[44].assign("Baculo aflorado", "Un baculo hecho de ramas adornado con flores. Pulsa con poder", 3, 7, 0, 15, 0, 4, 0);
+        // set definitivo/final
 
-        equips[45].assign("Grimorio medio", "Un libro de hechizos para magos conocedores", 3, 7, 0, 2, 2, 0, 0);
+        equips[40].assign("Sombrero de mago de primer grado", "Sombrero dado a aquellos magos con el suficiente talento para ser reconocidos como el peak", 0, 3, 10, 30, 5, 5, 0);
+        equips[41].assign("Capa y toga de mago de primer grado", "Capa dada a aquellos magos con el suficiente talento para ser reconocidos como el peak", 1, 3, 15, 50, 5, 5, -5);
+        equips[42].assign("Anillo de man(g)a", "Anillo que irradia un mana desconocido...", 2, 3, 10, 75, 3, -3, 0);
+        equips[43].assign("Grimorio de leyenda", "Grimorio viejo, se cree fue el que uso el primer mago...", 3, 3, 0, 45, 6, 0, 0);
 
-        equips[46].assign("Flor de durazno", "En plena floracion, deja un suave aroma que calma los sentidos", 2, 0, 3, 2, 0, 0, 1);
-        equips[47].assign("Collar de colmillos", "Un collar de cuentas y colmillos de monstruos", 2, 0, 0, 1, 0, 3, 0);
-        equips[48].assign("Espada voladora", "Una espada en la que puedes volar", 3, 0, 0, 0, 4, 0, 6);
+        equips[44].assign("", "", 0, 4, 0, 0, 0, 0, 0);
+        equips[45].assign("", "", 1, 4, 0, 0, 0, 0, 0);
+        equips[46].assign("", "", 2, 4, 0, 0, 0, 0, 0);
+        equips[47].assign("", "", 3, 4, 0, 0, 0, 0, 0);
+
+        equips[48].assign("Casco de guerrero estoico", "Casco para aquellos que desean alcanzar su limite", 0, 5, 20, 0, 0, 15, -5);
+        equips[49].assign("Armadura super pesada de mithril", "Armadura dura que protege y contiene todo el cuerpo", 1, 5, 65, 0, 0, 20, -15);
+        equips[52].assign("Escudo de heroe", "Escudo que, segun las leyendas, pertenecio a un heroe que una vez hubo...", 2, 5, 0, 0, -5, 20, -5);
+        equips[51].assign("Gran Sudaruska", "Un hacha de batalla negra, alta y pesada, con alas de murciélago, fusionada con escarcha y el alma de Sudaruska, lo que la ilumina con un color frío.", 3, 5, 0, 30, 20, 0, -5);
+
+        equips[52].assign("", "", 0, 6, 0, 0, 0, 0, 0);
+        equips[53].assign("", "", 1, 6, 0, 0, 0, 0, 0);
+        equips[54].assign("", "", 2, 6, 0, 0, 0, 0, 0);
+        equips[55].assign("", "", 3, 6, 0, 0, 0, 0, 0);
+
+        equips[56].assign("Aureola de serafín", "No temáis...", 0, 7, 20, 30, 0, -5, 0);
+        equips[57].assign("Vestido angelical", "Un esponjoso vestido adornado por encaje, listones, moños y un par de alas. Parece haber sido diseñado por los mismísimos ángeles", 1, 7, 35, 45, 0, 0, 5);
+        equips[58].assign("Gema del alma", "Ha sido creada al conceder un deseo de inmensa importancia para su portador, la forma más pura y física de su alma... qué sucederá si se corrompe?", 2, 7, -15, 60, 0, 5, 0);
+        equips[59].assign("Báculo alado santo", "Baculo bendecido por una fuerza mística fuera de nuestro alcance...", 3, 7, 0, 40, 0, 0, 4);
+
+        //objetos-equipamientos globales (que todos pueden usar)
+
+        equips[85].assign("Grimorio medio", "Un libro de hechizos para magos conocedores", 3, 0, 0, 0, 0, 0, 0);
+        equips[86].assign("Flor de durazno", "En plena floracion, deja un suave aroma que calma los sentidos", 2, 0, 5, 5, 0, 0, 1);
+        equips[87].assign("Collar de colmillos", "Un collar de cuentas y colmillos de monstruos", 2, 0, 0, 5, 0, 3, 0);
+        equips[88].assign("Espada voladora", "Una espada en la que puedes volar", 3, 0, 0, 0, 4, 0, 5);
+        equips[99].assign("Fedora", "El favorito de los reditores", 0, 5, 0, 0, 0, 0, -1); //Easter egg
+
+        //personajes y sus movimientos
 
         Battle.LEVEL_MAX = 30;
         protag[3].assign("Andrea", "Una hechicera", 70, 150, 5, 0, 5, new int[]{1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{3, 3, 3, 3});
@@ -243,7 +276,7 @@ public class Game implements Serializable {
         rooms[2].assignBasic(11, "Nut room", "Ayo is that the nut room??");
         rooms[2].assignOption(0, "Nuez", new int[]{0, 0, 0, 0, 0}, new String[]{"", "", "", "", ""}, new int[]{0, 0, 0, 0, 0});
 
-        equips[99].assign("Fedora", "El favorito de los reditores", 0, 5, 0, 0, 0, 0, -1);
+
       
         rooms[3].assignBasic(6, "Jaula", "Una celda fria y oscura... \n Hay un latigo justo fuera de los barrotes.");
         rooms[3].assignOption(0, "Descansar en la cama", new int[]{10, 0, 0, 0, 0}, new String[]{"Duermes en la cama unas horas...", "Despiertas lleno de energía!", "", "", ""}, new int[]{0, 0, 0, 0, 0});
