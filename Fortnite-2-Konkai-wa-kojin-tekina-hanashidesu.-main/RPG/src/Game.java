@@ -133,9 +133,9 @@ public class Game implements Serializable {
         equips[39].assign("", "", 2, 7, 0, 0, 0, 0, 0);
         equips[40].assign("", "", 3, 7, 0, 0, 0, 0, 0);
 
-        equips[41].assign("Tiara de cristal", "Una tiara de cuentas de cristal", 0, 7, 10, 8, 0, 1, 3);
+        equips[41].assign("Cofia de encaje sagrada", "Una cofia de encaje de un color blanco puro", 0, 7, 10, 8, 0, 1, 3);
         equips[42].assign("Túnicas de seda", "Túnicas hechas de seda de araña, muy resistente", 1, 7, 15, 0, 0, 5, 2);
-        equips[43].assign("Galleta", "Una galleta que parece tener vida propia, si se presta atencion parece recitar una tonadilla", 2, 7, 3, 1, 0, 0, 0);
+        equips[43].assign("Galleta de vainilla pura", "Una galleta que parece tener vida propia, si se presta atencion parece recitar una tonadilla", 2, 7, 3, 1, 0, 0, 0);
         equips[44].assign("Baculo aflorado", "Un baculo hecho de ramas adornado con flores. Pulsa con poder", 3, 7, 0, 15, 0, 4, 0);
 
         equips[45].assign("Grimorio medio", "Un libro de hechizos para magos conocedores", 3, 7, 0, 2, 2, 0, 0);
@@ -177,7 +177,7 @@ public class Game implements Serializable {
         moves[23].assign(0, 0, "Meditación", "Toma un descanso para meditar y restaurar tus energías.", "pone su arma frente a el y empieza a meditar.", 0, 0, 0, -1, 0, 10, 20, 9, false, 1);
 
 
-        protag[7].assign("Félix", "Una sacerdotisa", 80, 100, 3, 5, 8, new int[]{24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{7, 7, 7, 7});
+        protag[7].assign("Félix", "Una sacerdotisa mágica", 80, 100, 3, 5, 8, new int[]{24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{7, 7, 7, 7});
         moves[24].assign(10, 0, "Sanación pequeña", "Sana un poco las heridas de un aliado.", "sana a su aliado.", 2, 0, 0, -1, 0, 15, 0, -1, false, 1);
         moves[25].assign(10, 0, "Restauración pequeña", "Restaura un poco la energía de un aliado.", "restaura a su aliado.", 2, 0, 0, -1, 0, 0, 15, -1, false, 1);
         moves[26].assign(30, 0, "Sanación grande", "Sana bastante las heridas de un aliado.", "sana bastante a su aliado!", 2, 0, 0, -1, 0, 40, 0, -1, false, 1);
