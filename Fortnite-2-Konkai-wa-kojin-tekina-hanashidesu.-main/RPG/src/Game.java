@@ -99,7 +99,7 @@ public class Game implements Serializable {
         equips[12].assign("Vacio", "No necesita arma, usa su boca para atacar.", 3, 5, 0, 0, 0, 0, 0);
 
         equips[13].assign("Cubrebocas oscuro", "Cubrebocas que brinda sigilo.", 0, 6, 5, 0, 0, 0, 2);
-        equips[14].assign("Armadura basica", "Armadura que cubre solo lo escencial.", 1, 6, 10, 0, 0, 2, 0);
+        equips[14].assign("Armadura basica", "Armadura que cubre solo lo esencial.", 1, 6, 10, 0, 0, 2, 0);
         equips[15].assign("Bufanda negra", "Bufanda larga y ligera que cubre a su usuario.", 2, 6, 5, 0, 0, 0, 2);
         equips[16].assign("Tanto", "Katana corta de filo pobre.", 3, 6, 0, 0, 2, 0, 0);
 
@@ -133,6 +133,17 @@ public class Game implements Serializable {
         equips[39].assign("", "", 2, 7, 0, 0, 0, 0, 0);
         equips[40].assign("", "", 3, 7, 0, 0, 0, 0, 0);
 
+        equips[41].assign("Tiara de cristal", "Una tiara de cuentas de cristal", 0, 7, 10, 8, 0, 1, 3);
+        equips[42].assign("Túnicas de seda", "Túnicas hechas de seda de araña, muy resistente", 1, 7, 15, 0, 0, 5, 2);
+        equips[43].assign("Galleta", "Una galleta que parece tener vida propia, si se presta atencion parece recitar una tonadilla", 2, 7, 3, 1, 0, 0, 0);
+        equips[44].assign("Baculo aflorado", "Un baculo hecho de ramas adornado con flores. Pulsa con poder", 3, 7, 0, 15, 0, 4, 0);
+
+        equips[45].assign("Grimorio medio", "Un libro de hechizos para magos conocedores", 3, 7, 0, 2, 2, 0, 0);
+
+        equips[46].assign("Flor de durazno", "En plena floracion, deja un suave aroma que calma los sentidos", 2, 0, 3, 2, 0, 0, 1);
+        equips[47].assign("Collar de colmillos", "Un collar de cuentas y colmillos de monstruos", 2, 0, 0, 1, 0, 3, 0);
+        equips[48].assign("Espada voladora", "Una espada en la que puedes volar", 3, 0, 0, 0, 4, 0, 6);
+
         Battle.LEVEL_MAX = 30;
         protag[3].assign("Andrea", "Una hechicera", 70, 150, 5, 0, 5, new int[]{1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{3, 3, 3, 3});
         moves[1].assign(20, 0, "Bola de fuego", "Ataca a un enemigo y le inflige quemaduras.", "conjura una bola de fuego hacia el enemigo!", 1, 15, 2, 1, 3, 0, 0, -1, false, 1);
@@ -147,7 +158,7 @@ public class Game implements Serializable {
         moves[8].assign(30, 0, "Inducción a la locura", "Enloquece a un enemigo provocando que ataque de forma aleatoria.", "susurra algo al enemigo...", 1, 0, 0, 5, 5, 0, 0, -1, false, 1);
         moves[9].assign(15, 1, "Sanguijuelas", "Invoca sanguijuelas para que consuman el mana del oponente.", "invoca sanguijuelas sobre el enemigo!", 1, 1, 0, 6, 6, 0, 0, -1, false, 7);
         moves[10].assign(40, 1, "Maldición", "Coloca un sello de maldición sobre el oponente, impidiendo su curación.", "coloca un sello maldito sobre el enemigo!", 1, 0, 0, 7, 1, 0, 0, -1, false, 1);
-        moves[11].assign(15, 1, "Drenadoras", "Lanza semillas a los oponentes que consumiran su energía vital.", "lanza un par de semillas a el enemigo!", 1, 0, 0, 8, 0, 6, 0, -1, false, 1);
+        moves[11].assign(15, 1, "Drenadoras", "Lanza semillas a los oponentes que consumiran su energía vital.", "lanza un par de semillas a el enemigo!", 1, 0, 0, 8, 6, 0, 0, -1, false, 1);
         moves[12].assign(40, 40, "Vinculo simbiotico", "Establece un vinculo con un aliado, restaurando gran parte de su fuerza, pero impidiendo que se curen.", "pone su mano sobre su aliado...", 2, 0, 0, 9, 1, 300, 300, 2, false, 1);
 
         protag[5].assign("Jorgelon", "El más comelon", 225, 20, 25, 10, 1, new int[]{13, 14, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{5, 5, 5, 5});
@@ -234,12 +245,19 @@ public class Game implements Serializable {
 
         equips[99].assign("Fedora", "El favorito de los reditores", 0, 5, 0, 0, 0, 0, -1);
       
-        rooms[3].assignBasic(6, "Jaula", "Una celda fria y oscura...");
+        rooms[3].assignBasic(6, "Jaula", "Una celda fria y oscura... \n Hay un latigo justo fuera de los barrotes.");
         rooms[3].assignOption(0, "Descansar en la cama", new int[]{10, 0, 0, 0, 0}, new String[]{"Duermes en la cama unas horas...", "Despiertas lleno de energía!", "", "", ""}, new int[]{0, 0, 0, 0, 0});
         rooms[3].assignOption(1, "Revisar debajo de la cama", new int[]{0, 2, 7, 4, 9}, new String[]{"Encuentras un par de monedas...", "Pero unas ratas saltan hacia ti!", "Encontraste 10 monedas!", "Conseguiste carne de alimaña cruda!", ""}, new int[]{0, 1, 10, 2, 1});
         rooms[3].assignOption(2, "Tomar el latigo a traves de los barrotes", new int[]{0, 0, 5, 9, 0}, new String[]{"Ves el latigo con el que te torturan a traves de los barrotes al lado de la silla en la que esta sentado el guardia", "Intentas alcanzarlo a traves de los barrotes...", "Conseguiste el latigo de paja!", "", ""}, new int[]{0, 0, 8, 1, 0});
         rooms[3].assignOption(3, "Abrir la celda", new int[]{6, 9, 1, 0, 0}, new String[]{"Intentas abrir la celda...", "Abres la puerta sin problemas.", "", "", ""}, new int[]{1, 0, 4, 0, 0});
         rooms[3].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "", ""}, new int[]{0, 2, 40, 1, 1});
+
+        rooms[4].assignBasic(6, "Mazmorras", "La mayoría no salen con vida de estas mazmorras... \nVes un grupo de ratas rodeando algo.");
+        rooms[4].assignOption(0, "Regresar a tu celda", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas a tu celda.", "", "", "", ""}, new int[]{3, 0, 0, 0, 0});
+        rooms[4].assignOption(1, "Acercarse a las ratas", new int[]{0, 2, 3, 4, 9}, new String[]{"Te acercas a las ratas...", "Pero te atacan!", "", "Conseguiste carne de alimaña cruda!", ""}, new int[]{0, 1, 2, 2, 1});
+        rooms[4].assignOption(2, "Tomar el latigo a traves de los barrotes", new int[]{0, 0, 5, 9, 0}, new String[]{"Ves el latigo con el que te torturan a traves de los barrotes al lado de la silla en la que esta sentado el guardia", "Intentas alcanzarlo a traves de los barrotes...", "Conseguiste el latigo de paja!", "", ""}, new int[]{0, 0, 8, 1, 0});
+        rooms[4].assignOption(3, "Abrir la celda", new int[]{6, 9, 1, 0, 0}, new String[]{"Intentas abrir la celda...", "Abres la puerta sin problemas.", "", "", ""}, new int[]{1, 0, 4, 0, 0});
+        rooms[4].assignOption(4, "Llamar la atención del guardia", new int[]{0, 2, 7, 4, 9}, new String[]{"Pretendes estar muerto...", "El guardia entra a revisarte y atacas por sorpresa!", "Conseguiste 40 monedas!", "", ""}, new int[]{0, 2, 40, 1, 1});
     }
     public void play() {
         started = true;
@@ -325,14 +343,8 @@ public class Game implements Serializable {
                             }
                             break;
                         case 9: //effect id = 0 -> se mantiene la opcion, y solo se quita el efecto, effect id = 1 -> se quita la opcion completamente
-                            String optionName = "";
-                            if (rooms[roomid].effectID[a - 1][choice] == 0)
-                                optionName = rooms[roomid].optionName[choice];
-                            else if (rooms[roomid].effectID[a - 1][choice] == 1) {
-                                optionName = "";
-                                rooms[roomid].options -= 1;
-                            }
-                            rooms[roomid].assignSingleOption(choice, (a - 1), optionName, 0, "", 0);
+                            if (rooms[roomid].effectID[a][choice] == 0) rooms[roomid].assignSingleOption(choice, (a - 1), rooms[roomid].optionName[choice], 0, "", 0);
+                            else if (rooms[roomid].effectID[a][choice] == 1) rooms[roomid].assignOption(choice, "", new int[]{0, 0, 0, 0, 0}, new String[]{"", "", "", "", ""}, new int[]{0, 0, 0, 0, 0});
                             break;
                         case 10: //regenerate all health
                             for (int i = 0; i < 3; i++) {
@@ -462,7 +474,7 @@ public class Game implements Serializable {
                                     case 0, 1, 2:
                                         continyuMenu = 3;
                                         while (continyuMenu == 3) {
-                                            System.out.println("La armadura de " + protag[choiceMenu].name
+                                            System.out.println("La armadura de " + protag[party[choiceMenu]].name
                                                     + "\n  1. Cabeza: " + equips[protag[choiceMenu].equip[0]].name + "\n  2. Cuerpo: " + equips[protag[choiceMenu].equip[1]].name
                                                     + "\n  3. Accesorio: " + equips[protag[choiceMenu].equip[2]].name + "\n  4. Arma: " + equips[protag[choiceMenu].equip[3]].name
                                                     + "\n    ¿Cual Accesorio quieres cambiar?");

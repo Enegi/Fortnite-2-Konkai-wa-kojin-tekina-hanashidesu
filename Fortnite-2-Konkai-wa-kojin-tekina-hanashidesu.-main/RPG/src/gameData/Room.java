@@ -39,12 +39,15 @@ public class Room extends Common {
     public void optionsCheck(){
         for (int i = 0; i < 9; i++){
             if ((optionName[i].isEmpty()) && (!optionName[(i + 1)].isEmpty())){
-                for (int j = 0; j < 5; j++){
-                    optionName[i] = optionName[(i + 1)];
-                    effect[j][i] = effect[j][(i + 1)];
-                    effectText[j][i] = effectText[j][(i + 1)];
-                    effectID[j][i] = effectID[j][(i + 1)];
-                }
+                for (int j = i; j < 9; j++) {
+                    optionName[j] = optionName[(j + 1)];
+                    for (int k = 0; k < 5; k++) {
+                        effect[k][j] = effect[k][(j + 1)];
+                        effectText[k][j] = effectText[k][(j + 1)];
+                        effectID[k][j] = effectID[k][(j + 1)];
+                    }
+                }options-=1;
+                break;
             }
         }
     }
