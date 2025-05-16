@@ -129,6 +129,7 @@ public class Game implements Serializable {
         equips[35].assign("Mascara de oni", "Mascara hecha con piel de un oni rojo", 2, 6, 5, 5, 0, 0, 1);
         equips[36].assign("Katana", "Katana comun de filo superior", 3, 6, 0, 0, 5, 0, -1);
 
+
         equips[37].assign("Tiara de cristal", "Una tiara de cuentas de cristal", 0, 7, 10, 10, 0, 1, 0);
         equips[38].assign("Túnicas de seda", "Túnicas hechas de seda de araña, muy resistente", 1, 7, 15, 0, 0, -1, 2);
         equips[38].assign("Galleta", "Una galleta que parece tener vida propia, si se presta atencion parece recitar una tonadilla", 2, 7, 5, 5, 0, 0, 1);
@@ -168,6 +169,7 @@ public class Game implements Serializable {
         equips[99].assign("Fedora", "El favorito de los reditores", 0, 5, 0, 0, 0, 0, -1); //Easter egg
 
         //personajes y sus movimientos
+
         Battle.LEVEL_MAX = 30;
         protag[3].assign("Andrea", "Una hechicera", 70, 150, 5, 0, 5, new int[]{1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{3, 3, 3, 3});
         moves[1].assign(20, 0, "Bola de fuego", "Ataca a un enemigo y le inflige quemaduras.", "conjura una bola de fuego hacia el enemigo!", 1, 15, 2, 1, 3, 0, 0, -1, false, 1);
@@ -201,7 +203,7 @@ public class Game implements Serializable {
         moves[23].assign(0, 0, "Meditación", "Toma un descanso para meditar y restaurar tus energías.", "pone su arma frente a el y empieza a meditar.", 0, 0, 0, -1, 0, 10, 20, 9, false, 1);
 
 
-        protag[7].assign("Félix", "Una sacerdotisa", 80, 100, 3, 5, 8, new int[]{24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{7, 7, 7, 7});
+        protag[7].assign("Félix", "Una sacerdotisa mágica", 80, 100, 3, 5, 8, new int[]{24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{7, 7, 7, 7});
         moves[24].assign(10, 0, "Sanación pequeña", "Sana un poco las heridas de un aliado.", "sana a su aliado.", 2, 0, 0, -1, 0, 15, 0, -1, false, 1);
         moves[25].assign(10, 0, "Restauración pequeña", "Restaura un poco la energía de un aliado.", "restaura a su aliado.", 2, 0, 0, -1, 0, 0, 15, -1, false, 1);
         moves[26].assign(30, 0, "Sanación grande", "Sana bastante las heridas de un aliado.", "sana bastante a su aliado!", 2, 0, 0, -1, 0, 40, 0, -1, false, 1);
