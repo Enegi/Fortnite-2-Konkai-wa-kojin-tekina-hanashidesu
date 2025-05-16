@@ -99,7 +99,7 @@ public class Game implements Serializable {
         equips[12].assign("Vacio", "No necesita arma, usa su boca para atacar.", 3, 5, 0, 0, 0, 0, 0);
 
         equips[13].assign("Cubrebocas oscuro", "Cubrebocas que brinda sigilo.", 0, 6, 5, 0, 0, 0, 2);
-        equips[14].assign("Armadura basica", "Armadura que cubre solo lo escencial.", 1, 6, 10, 0, 0, 2, 0);
+        equips[14].assign("Armadura basica", "Armadura que cubre solo lo esencial.", 1, 6, 10, 0, 0, 2, 0);
         equips[15].assign("Bufanda negra", "Bufanda larga y ligera que cubre a su usuario.", 2, 6, 5, 0, 0, 0, 2);
         equips[16].assign("Tanto", "Katana corta de filo pobre.", 3, 6, 0, 0, 2, 0, 0);
 
@@ -132,6 +132,17 @@ public class Game implements Serializable {
         equips[38].assign("", "", 1, 7, 0, 0, 0, 0, 0);
         equips[39].assign("", "", 2, 7, 0, 0, 0, 0, 0);
         equips[40].assign("", "", 3, 7, 0, 0, 0, 0, 0);
+
+        equips[41].assign("Tiara de cristal", "Una tiara de cuentas de cristal", 0, 7, 10, 8, 0, 1, 3);
+        equips[42].assign("Túnicas de seda", "Túnicas hechas de seda de araña, muy resistente", 1, 7, 15, 0, 0, 5, 2);
+        equips[43].assign("Galleta", "Una galleta que parece tener vida propia, si se presta atencion parece recitar una tonadilla", 2, 7, 3, 1, 0, 0, 0);
+        equips[44].assign("Baculo aflorado", "Un baculo hecho de ramas adornado con flores. Pulsa con poder", 3, 7, 0, 15, 0, 4, 0);
+
+        equips[45].assign("Grimorio medio", "Un libro de hechizos para magos conocedores", 3, 7, 0, 2, 2, 0, 0);
+
+        equips[46].assign("Flor de durazno", "En plena floracion, deja un suave aroma que calma los sentidos", 2, 0, 3, 2, 0, 0, 1);
+        equips[47].assign("Collar de colmillos", "Un collar de cuentas y colmillos de monstruos", 2, 0, 0, 1, 0, 3, 0);
+        equips[48].assign("Espada voladora", "Una espada en la que puedes volar", 3, 0, 0, 0, 4, 0, 6);
 
         Battle.LEVEL_MAX = 30;
         protag[3].assign("Andrea", "Una hechicera", 70, 150, 5, 0, 5, new int[]{1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 0, 0, 0}, new int[]{3, 3, 3, 3});
