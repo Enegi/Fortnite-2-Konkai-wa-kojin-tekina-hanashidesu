@@ -28,7 +28,7 @@ public class RPG{
     }
     public static void main(String[] args) {
         Game basicGame = new Game();
-        boolean reset = true;
+        boolean reset = false;
         int playing = 1;
         basicGame.defaultSave();
         if (reset){

@@ -127,7 +127,7 @@ public class Battle extends Common {
                                                 }
                                                 move = choice(4) + 2;
                                                 System.out.println(battler[move].name + ": " + battler[move].desc);
-                                                System.out.println("su HP es " + battler[move].maxHP + ", MP es " + battler[move].maxHP + ", ataque es " + battler[move].atk + " y su defensa es " + battler[move].def);
+                                                System.out.println("su HP es " + battler[move].maxHP + ", MP es " + battler[move].maxMP + ", ataque es " + battler[move].atk + " y su defensa es " + battler[move].def);
                                                 break;
                                             case 2:
                                                 break;

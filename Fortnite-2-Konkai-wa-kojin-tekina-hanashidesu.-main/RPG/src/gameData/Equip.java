@@ -54,6 +54,7 @@ public class Equip extends KeyItem {
         character.spd -= spd;
         character.maxHP -= hp;
         character.maxMP -= mp;
+        character.equip[category] = 0;
         return character;
     }
 
@@ -63,6 +64,7 @@ public class Equip extends KeyItem {
         character.spd += spd;
         character.maxHP += hp;
         character.maxMP += mp;
+        character.equip[category] = id;
         return character;
     }
 }

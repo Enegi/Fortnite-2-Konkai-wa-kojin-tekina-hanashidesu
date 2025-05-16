@@ -282,8 +282,8 @@ public class Game implements Serializable {
         rooms[4].assignOption(0, "Regresar a tu celda", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas a tu celda...", "", "", "", ""}, new int[]{3, 0, 0, 0, 0});
         rooms[4].assignOption(1, "Acercarse a las ratas", new int[]{0, 2, 3, 4, 9}, new String[]{"Te acercas a las ratas...", "Pero te atacan!", "Conseguiste pan mohoso!", "Conseguiste carne de alimaña cruda!", ""}, new int[]{0, 1, 2, 2, 1});
         rooms[4].assignOption(2, "Saquear el cuerpo del guardia", new int[]{5, 5, 5, 4, 9}, new String[]{"Conseguiste la boina militar!", "Conseguiste el atuendo militar!", "Conseguiste el brazal militar!", "Conseguiste una insignia de guardia!", ""}, new int[]{5, 6, 7, 4, 1});
-        rooms[4].assignOption(3, "Salir de las mazmorras por las escaleras", new int[]{1, 0, 0, 0, 0}, new String[]{"Subes las escaleras...", "", "", "", ""}, new int[]{0, 0, 0, 0, 0});
-        rooms[4].assignOption(4, "Explorar las mazmorras", new int[]{1, 0, 0, 0, 0}, new String[]{"Continuas explorando los corredores de las mazmorras...", "", "", "", ""}, new int[]{5, 0, 0, 0, 0});
+        //rooms[4].assignOption(3, "Salir de las mazmorras por las escaleras", new int[]{1, 0, 0, 0, 0}, new String[]{"Subes las escaleras...", "", "", "", ""}, new int[]{10, 0, 0, 0, 0});
+        rooms[4].assignOption(3, "Explorar las mazmorras", new int[]{1, 0, 0, 0, 0}, new String[]{"Continuas explorando los corredores de las mazmorras...", "", "", "", ""}, new int[]{5, 0, 0, 0, 0});
         rooms[5].assignBasic(3, "Mazmorras-2", "La mayoría no salen con vida de estas mazmorras... \nVes una pila con restos de ratas y murcielagos fuera de una celda...");
         rooms[5].assignOption(0, "Regresar", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas por donde viniste...", "", "", "", ""}, new int[]{4, 0, 0, 0, 0});
         rooms[5].assignOption(1, "Ir hacia los restos", new int[]{1, 0, 0, 0, 0}, new String[]{"Sigues el rastro de los restos...", "", "", "", ""}, new int[]{6, 0, 0, 0, 0});
@@ -298,11 +298,16 @@ public class Game implements Serializable {
         rooms[8].assignBasic(2, "Mazmorras-3", "La mayoría no salen con vida de estas mazmorras... \nMuchos de los prisioneros en esta zona parecen estar aterrados de algo...");
         rooms[8].assignOption(0, "Regresar", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas por donde viniste...", "", "", "", ""}, new int[]{5, 0, 0, 0, 0});
         rooms[8].assignOption(1, "Ir más profundo", new int[]{1, 0, 0, 0, 0}, new String[]{"Te adentras más profundo en las mazmorras...", "", "", "", ""}, new int[]{9, 0, 0, 0, 0});
-        rooms[9].assignBasic(5, "Mazmorras-4", "Ves a un prisionero solitario al final del pasillo...");
+        rooms[9].assignBasic(2, "Mazmorras-4", "Ves a un prisionero solitario al final del pasillo...");
         rooms[9].assignOption(0, "Regresar", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas por donde viniste...", "", "", "", ""}, new int[]{8, 0, 0, 0, 0});
-        rooms[9].assignOption(1, "Acercarse al prisionero", new int[]{0, 2, 0, 0, 9}, new String[]{"Te acercas al prisionero...\nLo escuchas murmurarse cosas a si mismo...\nEl prisionero nota tu presencia...", "El prisionero enfurecido rompe los barrotes de su celda y se abalanza contra ti!", "", "", ""}, new int[]{0, 4, 0, 0, 1});
+        rooms[9].assignOption(1, "Acercarse al prisionero", new int[]{0, 2, 16, 0, 0}, new String[]{"Te acercas al prisionero...\nLo escuchas murmurarse cosas a si mismo...\nEl prisionero nota tu presencia...", "El prisionero enfurecido rompe los barrotes de su celda y se abalanza contra ti!", "", "", ""}, new int[]{0, 4, 0, 0, 1});
+        rooms[10].assignBasic(1, "Vestibulo", "WIP: Hasta aquí llega la versión actual del juego");
+        rooms[10].assignOption(0, "Regresar", new int[]{1, 0, 0, 0, 0}, new String[]{"Regresas por donde viniste...", "", "", "", ""}, new int[]{4, 0, 0, 0, 0});
     }
     public void play() {
+        if (!started){
+            System.out.println("Eres un sicario buscando a un cierto \"Prisionero Loco\" (Si asi se llama).\nLo ultimo que se supo de el es que estaba en una mazmorra vieja pero bien guardada.\nTe dejaste ser capturado a proposito para llegar a tu enemigo.");
+        }
         started = true;
         while (continyu == 0) {
 
@@ -325,6 +330,7 @@ public class Game implements Serializable {
                             break;
                         case 1:
                             roomid = rooms[roomid].effectID[a][choice]; //esta opcion te lleva a otro cuarto
+                            a=5;
                             break;
                         case 2: // battle
                             Battle battle = new Battle(enemy, protag, party, enemyTroop[rooms[roomid].effectID[a][choice]], statusEffects, itemList, moves, items, fleeChance);
@@ -518,8 +524,8 @@ public class Game implements Serializable {
                                         continyuMenu = 3;
                                         while (continyuMenu == 3) {
                                             System.out.println("La armadura de " + protag[party[choiceMenu]].name
-                                                    + "\n  1. Cabeza: " + equips[protag[choiceMenu].equip[0]].name + "\n  2. Cuerpo: " + equips[protag[choiceMenu].equip[1]].name
-                                                    + "\n  3. Accesorio: " + equips[protag[choiceMenu].equip[2]].name + "\n  4. Arma: " + equips[protag[choiceMenu].equip[3]].name
+                                                    + "\n  1. Cabeza: " + equips[protag[party[choiceMenu]].equip[0]].name + "\n  2. Cuerpo: " + equips[protag[party[choiceMenu]].equip[1]].name
+                                                    + "\n  3. Accesorio: " + equips[protag[party[choiceMenu]].equip[2]].name + "\n  4. Arma: " + equips[protag[party[choiceMenu]].equip[3]].name
                                                     + "\n    ¿Cual Accesorio quieres cambiar?");
                                             int choiceMenuArmor = Common.choice(4) - 1;
                                             switch (choiceMenuArmor) {
@@ -536,10 +542,10 @@ public class Game implements Serializable {
                                                     }
                                                     int choiceMenuArmorB = Common.choice(armorMenuThing) - 1;
                                                     if ((choiceMenuArmorB >= 0) && (choiceMenuArmorB <= (armorMenuThing + 1))) {
-                                                        protag[choiceMenu] = equips[protag[choiceMenu].equip[choiceMenuArmor]].takeaway(protag[choiceMenu]);
-                                                        protag[choiceMenu] = equips[armorMenuArray[choiceMenuArmorB]].give(protag[choiceMenu]);
-                                                        protag[choiceMenu].equip[choiceMenuArmor] = equips[armorMenuArray[choiceMenuArmorB]].id;
-                                                        protag[choiceMenu].statCheck();
+                                                        protag[party[choiceMenu]] = equips[protag[party[choiceMenu]].equip[choiceMenuArmor]].takeaway(protag[party[choiceMenu]]);
+                                                        protag[party[choiceMenu]] = equips[armorMenuArray[choiceMenuArmorB]].give(protag[party[choiceMenu]]);
+                                                        protag[party[choiceMenu]].equip[choiceMenuArmor] = equips[armorMenuArray[choiceMenuArmorB]].id;
+                                                        protag[party[choiceMenu]].statCheck();
                                                     } else continyuMenu = 2;
                                                     break;
                                                 default:
