@@ -75,6 +75,16 @@ public class Game implements Serializable {
         items[1].assign("Poción de curación", "Huele a pipi.", "bebe la poción... y no puede evitar escupirla!", 0, -10, -1, 0, 0, -1, 0);
         items[2].assign("Pan mohoso", "Mejor que una rata... supongo.", "se come el pan mohoso y a duras penas lo puede tragar.", 0, 5, -1, 0, 0, -1, 0);
         items[3].assign("Carne de alimaña asada", "No esta tan mal una vez te acostumbras.", "se come la carne de alimaña asada.", 0, 10, -1, 0, 0, -1, 0);
+        items[4].assign("Cucaracha", "Sacia el hambre", "Las alas crujen y tragas tratando de no vomitar.", 0, 3, -1, 0, 0, -1, 0);
+        items[5].assign("Cola de rata", "Una cola de rata desprendida del cuerpo", "Se come la cola de rata.", 0, 3, -1, 0, 0, -1, 0);
+        items[6].assign("Arroz blanco", "Un arroz blanco sin mucho sabor", "Es lo más comestible que has probado en este lugar.", 0, 5, -1, 1, 0, -1, 0);
+        items[7].assign("Tarta de manzana", "Una tarta de manzana espolvoreada con azucar", "Si te sirvieran esto todos los dias, no te quejarias.", 0, 8, -1, 3, 1, -1, 0);
+        items[8].assign("Chilaquiles", "Unos chilaquiles de salsa verde", "Prefieres los rojos, pero te llenan de fuerza.", 0, 0, -1, 0, 4, -1, 0);
+        items[9].assign("Espinacas", "Unas espinacas verdes frescas", "Recuerdas brevemente un hombre que comía esto para obtener superfuerza, lo comes...", 0, 0, -1, 3, 8, -1, 0);
+        items[10].assign("Miel", "Miel de abeja en tarro", "Es muy empalagosa, pero te obligas a beber.", 0, 4, -1, 2, 0, -1, 0);
+        items[11].assign("Leche", "Leche deslactosada", "Bebes sin esperar mucho, pero es sorprendentemente buena.", 0, 0, -1, 0, 0, -1, 0);
+        items[12].assign("Pollo asado", "Pollo asado a la miel", "Devoras el muñon.", 0, 10, -1, 5, 0, -1, 0);
+        items[0].assign("Jugo de guayaba", "Un jugo de guayaba fresco", "Bebes y sientes como si estuvieras en el cielo.", 0, 5, -1, 5, 0, -1, 0);
 
         keyItems[0].assign("", "");
         keyItems[1].assign("Llave de la celda", "Una llave vieja y oxidada.");
